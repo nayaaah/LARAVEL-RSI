@@ -14,16 +14,15 @@ return new class extends Migration
         Schema::create('jadwal', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('tahun_akademik', 10);
-            $table->string('kode_smt', ['Gazal', 'Genap'])->default('Gazal');
+            $table->enum('kode_smt', ['Gasal', 'Genap'])->default('Gasal');
             $table->string('kelas', 50);
             $table->uuid('sesi_id');
             $table->uuid('mata_kuliah_id');
             $table->unsignedBigInteger('dosen_id');
             $table->foreign('sesi_id')->references('id')->on('sesi')->onDelete('cascade');
-            $table->foreign('mata_kuliah_id')->references('id')->on('matakuliah')->onDelete('cascade');
+            $table->foreign('mata_kuliah_id')->references('id')->on('mata_kuliah')->onDelete('cascade');
             $table->foreign('dosen_id')->references('id')->on('users')->onDelete('cascade');
-            $table->timestamps();
-        });
+            $table->timestamps();});
     }
 
     /**

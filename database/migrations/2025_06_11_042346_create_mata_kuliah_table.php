@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('matakuliah', function (Blueprint $table) {
+        Schema::create('mata_kuliah', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('kode_mk', 20)->unique();
             $table->string('nama', 100);
+            $table->string('kode_mk', 20)->unique();
             $table->uuid('prodi_id');
-            $table->foreign('prodi_id')->references('id')->on('prodi')->onDelete('restrict')->onUpdate('restrict');
-            $table->timestamps();
-        });
+            $table->foreign('prodi_id')->references('id')->on('prodi')->onDelete('cascade');
+            $table->timestamps();});
     }
 
     /**
