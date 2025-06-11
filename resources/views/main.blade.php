@@ -275,6 +275,30 @@
                                 <p>Mahasiswa</p>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class='nav-link' href='{{ route('matakuliah.index') }}'>
+                                <i class="nav-icon bi bi-people"></i>
+                                <p>Mata Kuliah</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class='nav-link' href='{{ route('sesi.index') }}'>
+                                <i class="nav-icon bi bi-people"></i>
+                                <p>Sesi</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class='nav-link' href='{{ route('jadwal.index') }}'>
+                                <i class="nav-icon bi bi-people"></i>
+                                <p>Jadwal</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class='nav-link' href='{{ route('materi.index') }}'>
+                                <i class="nav-icon bi bi-people"></i>
+                                <p>Materi</p>
+                            </a>
+                        </li>
                     </ul>
                     <!--end::Sidebar Menu-->
                 </nav>
